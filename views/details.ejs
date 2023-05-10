@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head.ejs") %>
+
+<body>
+    <%- include("./partials/nav.ejs") %>
+
+
+    <div class="details content">
+        <h2>All Blog Details</h2>
+        <% if (blog !== undefined) { %>
+             
+                <h3 class="title"><%= blog.title %></h3>
+                <div class="content">
+                    <p class="snippet"><%= blog.snippet %></p>
+                    <p class="body"><%= blog.body %></p>
+                </div>
+                <!-- <p class="id"><%= blog._id %></p> -->
+                <a class="delete" id="delete" data-doc="<%= blog._id %>">delete</a>
+        <%} else{ %>
+            <p>No Blog with the required _id</p>
+        <%} %>
+    </div>
+
+    <%- include("./partials/footer.ejs") %>
+
+
+    <script>
+        const del = document.querySelector('a.delete');
+        del.onclick = function() {
+            fetch(`/blogs/${this.dataset.doc}`, {
+            method: 'DELETE'
+            }).then((response) => {
+               response.json() //return the actual data
+               .then((data) => {
+                console.log(data);
+                // location.assign(data.redirect);
+                document.location.href = data.redirect;
+            }).catch((err) => console.log(err))
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+            // const XHR = new XMLHttpRequest();
+
+            // XHR.open('DELETE', `/blogs/${this.dataset.doc}`);
+
+            // XHR.onreadystatechange = function() {
+            //     if(this.readyState == 4) {
+            //         const response = this.responseText;
+            //         console.log(response);
+            //     }
+            // }
+            // XHR.send();
+        }  
+        
+    </script>
+</body>
+</html>
+
+<!-- All the ejs dynamic code during to the server side renering process will be converted to a valid html values by the help of ejs view engine on the server -->
+
+<!-- partial templets is used to keep repeated html contents in the ejs view templets this make it easy to update the content only once insted to iterate over each view to update it indivisualy -->

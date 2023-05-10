@@ -1,0 +1,82 @@
+<%- include('./partials/head.ejs')%>
+
+<form>
+    <h2>Sign up</h2>
+
+    <label for="email">Email</label>
+    <input type="text" name="email" required>
+
+    <div class="error email"></div>
+
+    <label for="password">Password</label>
+    <input type="password" name="password" required>
+
+    <div class="error password"></div>
+
+    <!-- button inside form will fire a submit event automatically -->
+    <button>Sign up</button>
+</form>
+
+
+<script>
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();  //prevent the default action on submit the form (refresh the page is the defualt action)
+        // get the values
+        // grap the form values
+        const email = form.email.value;
+        const password = form.password.value;
+
+
+        const passwordError = document.querySelector('.password.error');
+        const emailError = document.querySelector('.email.error');
+                 
+
+        const data = {email,password};
+
+        try {
+           const res = await fetch('signup', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await res.json();
+            
+            console.log(result);
+
+            if (result.error) {
+                console.log('There is some errors');
+                const {password, email} = result.error;
+                
+                passwordError.innerHTML = password;
+                emailError.innerHTML = email;
+            } else {
+                passwordError.innerHTML = '';
+                emailError.innerHTML = '';
+            }
+
+            if (result.user) {
+        
+                location.assign('/');
+            }
+        } catch(err) {
+            console.log(err);
+        } 
+
+       
+        
+        // .then((res) => {
+        //     console.log(res);
+        //     res.json().then((result) => {
+        //         console.log(result);
+                
+        //     }).catch((err) => console.log(err));
+        // }).catch((err) => console.log(err));
+    })
+</script>
+
+<%- include('./partials/footer.ejs')%>

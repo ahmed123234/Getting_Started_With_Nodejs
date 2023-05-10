@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head.ejs") %>
+
+<body>
+    <!-- the following ejs will running on the server -->
+    <!-- <% const name = 'Ahmed' %>  -->
+  
+    <!-- include partial file using include function -->
+
+    <!-- (-) sign is used to output value insted -->
+    <%- include("./partials/nav.ejs") %>
+
+
+    <div class="blogs content">
+        <h2>All Blogs</h2>
+        <% if (blogs.length > 0) { %>
+            <% blogs.forEach((blog) => { %>
+                <a href="/blogs/<%= blog._id %>">
+                    <h3 class="title"><%= blog.title %></h3>
+                    <p class="snippet"><%= blog.snippet %></p>
+                </a>
+                
+            <%})%>
+        <%} else{ %>
+            <p>No Blogs yet</p>
+        <%} %>
+    </div>
+
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>
+
+<!-- All the ejs dynamic code during to the server side renering process will be converted to a valid html values by the help of ejs view engine on the server -->
+
+<!-- partial templets is used to keep repeated html contents in the ejs view templets this make it easy to update the content only once insted to iterate over each view to update it indivisualy -->

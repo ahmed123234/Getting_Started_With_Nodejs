@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBuy | Ecommerce Website Design</title>
+    <link rel="stylesheet" href="/admin.css">
+    <link rel="stylesheet" href="/newcategory.css">
+    <link href="https://fonts.googleapis.com/css2?
+    family=Poppins:wght@100;200;300;400;500;600;700&display=swap" 
+    rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a88d896878.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="navbar">
+            <div class="logo">
+                <img src="../../static/images/logo.png" alt="" width="165px">
+            </div>
+           
+
+            <div class="nav-content">
+                <a href="">
+                    <i class="fa fa-bars symbol" aria-hidden="true"></i>
+                </a>
+
+                <div class="user-info">
+                    <i class="fa fa-bell-o symbol" aria-hidden="true"></i>
+
+                        <a class="user" href="">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </a> &nbsp;&nbsp;
+
+                        <span>Admin</span>
+
+                </div>
+        
+            </div>
+            
+        </div>
+
+
+        <!-- Create the main part of the admin page -->
+
+        <div class="main-content">
+            <aside>
+
+                <div class="row">
+                    <span id="dashboard">
+                        <i class="fa fa-tachometer icon-1" aria-hidden="true"></i>&nbsp;
+                        <span >Dashbord</span>
+                    </span>
+                </div>
+
+                <div class="row">
+                    <span id="customers">
+                        <i class="fa fa-users icon-2" aria-hidden="true"></i>&nbsp;
+                        <span >Customers</span>
+                    </span>
+                </div>
+
+
+                <div class="row">
+                    <span id="sellers">
+                        <i class="fa-solid fa-bag-shopping icon-3"></i>&nbsp;
+                        <span >Sellers</span>
+                    </span>
+                </div>
+
+
+                <div class="row">
+                    <span id="products">
+                        <i class="fa fa-shopping-cart icon-4" aria-hidden="true"></i>&nbsp;
+                        <span>Products</span>
+                    </span>
+                </div>
+
+
+                <div class="row">
+                    <span id="countries">
+                        <i class="fa fa-globe icon-5" aria-hidden="true"></i>&nbsp;
+                        <span >Countries</span>
+                    </span>
+                </div>
+
+
+                <div class="row">
+                    <span>
+                        <i class="fa fa-building icon-6" aria-hidden="true"></i>&nbsp;
+                        <span >Departments</span>
+                    </span>
+                </div>
+
+
+                <div class="row">
+                    <span>
+                        <i class="fa fa-building icon-10" aria-hidden="true"></i>&nbsp;
+                        <span >Sales</span>
+                    </span>
+                </div>
+
+                <div class="row">
+                    <span>
+                        <i class="fa-solid fa-truck icon-4"></i>&nbsp;
+                        <span >Delivery</span>
+                    </span>
+                </div>
+
+                <div class="row">
+                    <span>
+                        <i class="fa-solid fa-location-dot icon-8"></i>&nbsp;
+                        <span >Delivery Zones</span>
+                    </span>
+                </div>
+
+                <div class="row">
+                    <span>
+                        <i class="fa-solid fa-chart-column icon-7"></i>&nbsp;
+                        <span >Delivery Reports</span>
+                    </span>
+                </div>
+
+                <div class="row">
+                    <span>
+                        <i class="fa-sharp fa-solid fa-tags icon-9"></i>&nbsp;
+                        <span >Offers</span>
+                    </span>
+                </div>
+
+                <div class="row">
+                    <span>
+                        <i class="fa-brands fa-google-wallet icon-6"></i>&nbsp;
+                        <span >Wallet</span>
+                    </span>
+                </div>
+            </aside>
+            
+            <div class="displayedContent">
+
+                <div class="header">
+                    <h1>Ecom.Categories</h1>
+
+                    <div>
+                        <i class="fa fa-tachometer icon-1" aria-hidden="true"></i>&nbsp;
+                        <a href="">Home</a>&nbsp;
+                        <i class="fa-solid fa-angle-right"></i>&nbsp;
+                        <a href="">Ecom.Categories</a>&nbsp;
+                        <i class="fa-solid fa-angle-right"></i>&nbsp;
+                        <a href="">New Category</a>&nbsp;                   
+                    </div>
+                    
+                </div>
+
+
+
+
+
+
+
+                <h2>New Category</h2>
+
+                <div class="form">
+
+                    <div class="row">
+                        <label for="name">Name</label>
+                        <input class="col" type="text" placeholder="Name" id="name">
+                    </div>
+
+                    <div class="row">
+                        <label for="nameMalayma">Name in Malayama</label>
+                        <input class="col" type="text" placeholder="Name" id="nameMalayma">
+                    </div>
+
+                    <div class="row">
+                        <label for="description">Description</label>
+                        <textarea class="col"  placeholder="Description" id="description"></textarea>
+                    </div>
+
+                    <div class="row">
+                        <label for="dailyProd">Daily Prodduct</label>
+                        <div class="col">
+                            <input type="radio" name="dailyProd" value="Yes" id="yes">
+                            <label for="yes">Yes</label>&nbsp;&nbsp;
+                            
+                            <input type="radio" name="dailyProd" value="No" id="no">
+                            <label for="no">No</label>
+                        </div>
+                        
+                    </div>
+                    
+
+                    <div class="row">
+                        <label for="image">Category Image</label>
+                        <div class="col">
+                            <img src="../../static/images/defaultimage.png" alt="">
+                            <input id="image" type="file" draggable="true" aria-multiline="true" aria-placeholder="No image" aria-colspan="5">
+                            <!-- <input type="radio" name="dailyProd" value="No" id="no"> -->
+                            <div>image type .png, .jpeg. Size 100 x 100</div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <label for="Favorite status">Favorite Status</label>
+                        <div class="col">
+                            <input type="radio" name="FavoriteStatus" value="Yes" id="yes1">
+                            <label for="yes1">Yes</label>&nbsp;&nbsp;
+                            
+                            <input type="radio" name="FavoriteStatus" value="No" id="no1">
+                            <label for="no1">No</label>
+                        </div>
+                        
+                    </div>
+
+
+                    <div class="row">
+                        <label for="status">Status</label>
+
+
+                        <select class="col" name="" id="">
+                            <option value="active">Active</option>
+                            <option value="inActive">inActive</option>
+                        </select>
+                    
+                    </div>
+
+                    <div class="btns">
+                        <a href="" class="btn btn-submit">Submit</a>&nbsp;
+                        <a href="" class="btn btn-cancel">Cancel</a>
+                    </div>
+
+                </div>
+
+            </div> 
+        </div>
+    </div>
+
+    <!-- <script src="../../static/scripts/adminScripts/dashboard.js"></script> -->
+    <script src="admin-common.js"></script>
+    <!-- <script src="../../static/scripts/adminScripts/categories.js"></script> -->
+
+</body>
+
+</html>
