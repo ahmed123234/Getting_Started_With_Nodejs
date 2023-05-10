@@ -1,0 +1,155 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, .3);
+    padding : 10px 0;
+}
+
+.header h1 {
+    font-size: 25px;
+    color: #555;
+}
+
+h2 {
+    margin-left: 25px;
+
+}
+
+.header i {
+    color: #444;
+    /* padding-right: 10px; */
+}
+
+.header a {
+    display : inline;
+    text-decoration : none;
+    color : #666;
+}
+
+.header .fa-angle-right {
+    /* padding: 0 10px; */
+    color: #888;
+}
+
+.row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 95%;
+    margin: 2% auto;
+}
+
+.row label {
+    flex-basis: 30%;
+}
+
+.row .col {
+    flex-basis:  70%;
+}
+
+.col img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: 2% 0;
+}
+
+.row textarea {
+    resize: none;
+    overflow-x: hidden;
+    min-height: 150px;
+}
+
+.row :is(input, select, textarea) {
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #999;
+}
+
+
+.row :is(input:focus, select:focus, textarea:focus) {
+    border: 2px solid salmon;
+}
+
+
+.row :is(input[type = text], input[type = file] , select, textarea, label)  {
+    padding: 6px;
+}
+
+.btns {
+    /* float: right; */
+    /* width: 95%; */
+    margin: 3%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.btn-submit {
+    background-color: rgb(29, 141, 29);
+}
+
+
+.btn-cancel {
+    background-color: rgb(199, 111, 28);
+}
+
+.btn-submit:hover {
+    background-color: rgb(35, 169, 35);
+}
+
+
+.btn-cancel:hover {
+    background-color: rgb(222, 124, 31);
+}
+
+
+.form {
+    width: 95%;
+    margin: 3% auto;
+    padding: 8px;
+    border-radius: 5px;
+    /* border: 2px solid #999; */
+
+    box-shadow: 0px 0px 10px 2px #bab8b8;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header h1 {
+        margin: 3% 0px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .row :is(input, textarea, select) {
+        display: inline-block;
+        margin: 3% auto;
+    }
+
+    .row :is(input[type = text], input[type = file] , select, textarea){
+        width: 100%;
+        display: block;
+        overflow-x: hidden;
+    }
+}
